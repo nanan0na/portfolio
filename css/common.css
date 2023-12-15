@@ -1,0 +1,123 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+:root {
+  --main-color: #24ff00;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font: 2rem/1.5 'Dela Gothic One', 'Pretendard', 'Kalnia', sans-serif;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+button,
+label,
+a {
+  cursor: pointer;
+}
+.wrap {
+  /* background: #ff5; */
+  padding: 1.4rem 7rem;
+}
+
+/* header */
+#header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .gnb-left {
+  width: 54.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .gnb {
+  display: flex;
+  width: 48rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.check {
+  width: 40px;
+  height: 20px;
+}
+.check input {
+  display: none;
+}
+#header .check input + label {
+  padding: 1px 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  background: #000;
+  transition: 0.4s;
+  text-indent: -999px;
+  overflow: hidden;
+  position: relative;
+}
+.check input + label::after {
+  content: '';
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50px;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+#header::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  margin-top: 1.2rem;
+}
+
+/* footer */
+#footer .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+#footer .info li:nth-child(1),
+#footer .info li:nth-child(3) {
+  text-indent: -999px;
+  overflow: hidden;
+  position: relative;
+}
+#footer .info li:nth-child(1) {
+  width: 3.9rem;
+  height: 2rem;
+  background: url(../img/footer-pic01.svg) no-repeat 0 0 / cover;
+}
+#footer .info li:nth-child(3) {
+  width: 3rem;
+  height: 1.5rem;
+  background: url(../img/footer-pic02.svg) no-repeat 0 0 / cover;
+}
+#footer::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+}
