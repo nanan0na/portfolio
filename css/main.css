@@ -6,8 +6,6 @@
   -ms-user-select: none;
   user-select: none;
   mix-blend-mode: difference;
-  /*   background: #5f5; */
-  height: calc(100% - 9rem);
 }
 #container p {
   font-family: 'Pretendard';
@@ -21,7 +19,6 @@
 }
 .visual {
   position: relative;
-
   height: calc(100% - 8rem);
 }
 .visual-img {

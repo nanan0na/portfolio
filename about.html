@@ -6,9 +6,9 @@
     <title>nana</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
     <script src="./js/jquery-3.7.1.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/sub.js"></script>
     <script src="./js/common.js"></script>
   </head>
   <body>
@@ -19,7 +19,7 @@
       <!-- s: header -->
       <header id="header">
         <nav>
-          <h1 class="logo"><a href="index.html">logo</a></h1>
+          <a href="index.html"><h1 class="logo">logo</h1></a>
           <div class="gnb-left">
             <ul class="gnb">
               <li><a href="web.html">WEB</a></li>
@@ -34,28 +34,43 @@
         </nav>
       </header>
       <!-- //e: header -->
+
       <!-- s: main -->
-      <main id="container" class="main-page">
-        <p>Everything can be explored from <b>zero to infinity.</b></p>
-        <div class="visual">
-          <div class="visual-img">
-            <figure class="full-img"><img src="./img/main-visual-pic01.jpg" alt="visual" /></figure>
-          </div>
-          <!-- 비디오/이미지 영역 추가작업 -->
-          <figure class="sub-img1"><img src="./img/main-visual-pic02.jpg" alt="" /></figure>
-          <figure class="sub-img2"><img src="./img/main-visual-pic03.jpg" alt="" /></figure>
-          <figure class="sub-img3"><img src="./img/main-visual-pic04.jpg" alt="" /></figure>
-          <div class="visual-text">
-            <h2>
-              <strong>CREATIVE</strong>
-              <b>&</b>
-              <strong>SIMPLE</strong>
-            </h2>
-          </div>
-          <a href="#" class="next-button">next</a>
+      <main id="container" class="about">
+        <div class="about-wrap">
+          <ul class="about-list">
+            <li>
+              <a href="#">
+                <div class="about-list-text">
+                  <h2>FROM END TO END</h2>
+                  <strong>끊임없이 관찰하고 이뤄내는</strong>
+                </div>
+                <div class="page-button">PROFILE</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="about-list-text">
+                  <h2>BALANCE</h2>
+                  <strong>LOREM IPSUM</strong>
+                </div>
+                <div class="page-button">ABOUT</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="about-list-text">
+                  <h2>COMMUNICATION</h2>
+                  <strong>LOREM IPSUM</strong>
+                </div>
+                <div class="page-button">EPILOGUE</div>
+              </a>
+            </li>
+          </ul>
         </div>
       </main>
       <!-- //e: main -->
+
       <!-- s: footer -->
       <footer id="footer">
         <ul class="info">
