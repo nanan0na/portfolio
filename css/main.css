@@ -6,48 +6,56 @@
   -ms-user-select: none;
   user-select: none;
   mix-blend-mode: difference;
+  /*   background: #5f5; */
+  height: calc(100% - 9rem);
 }
 #container p {
   font-family: 'Pretendard';
   font-size: 2rem;
   line-height: 1.2;
-  margin-top: 1.2rem;
+  height: 8rem;
+  padding: 1.2rem 0;
 }
 #container p b {
   display: block;
 }
 .visual {
   position: relative;
-  margin-top: 2.6rem;
+
+  height: calc(100% - 8rem);
 }
-.visual-img figure {
+.visual-img {
+  position: absolute;
   width: 8rem;
   /* width: 6.6225%; */
-  height: 72rem;
-  animation: visualAni 1s both;
-  animation-delay: 1s;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
+.visual-img figure {
+  height: 100%;
+}
+
 /* @keyframes visualAni {
   100% {
     width: 100%;
   }
 } */
-
-.visual-img figure.on:nth-child(2) {
+.sub-img1 {
   position: absolute;
   top: 8%;
   left: 4%;
   width: 32.2rem;
   height: 18.4rem;
 }
-.visual-img figure.on:nth-child(3) {
+.sub-img2 {
   position: absolute;
-  top: 14%;
+  top: -1%;
   right: 6%;
   width: 21.3rem;
   height: 34.8rem;
 }
-.visual-img figure.on:nth-child(4) {
+.sub-img3 {
   position: absolute;
   bottom: 16%;
   left: 14%;
@@ -62,32 +70,31 @@
 }
 .visual-text {
   position: absolute;
-  top: 18%;
-  left: 12%;
+  top: 20%;
+  left: 11%;
+  /*   border: 1px solid #f00; */
+  width: 145.5rem;
+  height: 34.7rem;
+  line-height: 1;
 }
-.visual-text.on {
-  color: #fff;
-}
-.visual-text h2 strong:nth-child(1) {
+.visual-text h2 strong:first-child {
   font-size: 11rem;
-  position: relative;
-  z-index: 1;
 }
 .visual-text h2 b {
-  position: absolute;
-  top: 0;
-  left: 68rem;
   font-size: 22rem;
   font-family: 'Kalnia';
   color: #ccc;
   opacity: 50%;
-}
-.visual-text h2 strong:nth-child(3) {
   position: absolute;
-  top: 13rem;
-  right: -60rem;
+  top: -4%;
+  left: 47%;
+}
+.visual-text h2 strong:last-child {
   font-family: 'Kalnia';
   font-size: 20rem;
+  position: absolute;
+  bottom: 10%;
+  left: 48%;
 }
 .next-button {
   text-indent: -999px;

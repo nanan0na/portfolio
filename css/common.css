@@ -14,7 +14,7 @@ body {
   font: 2rem/1.5 'Dela Gothic One', 'Pretendard', 'Kalnia', sans-serif;
   height: 100vh;
   /* cursor: none; */
-  overflow: hidden;
+  /*   overflow: hidden; */
 }
 label,
 a {
@@ -42,9 +42,7 @@ a:hover {
   mix-blend-mode: difference;
   transform: translate(-10px, -5px);
 
-  /* 수정 */
-
-  transition: ease-in-out;
+  /*  transition: ease; */
 }
 .cursor.point {
   background: var(--main-color);
@@ -62,14 +60,19 @@ a:hover {
 }
 
 .wrap {
-  /* background: #ff5; */
-  /* padding: 1.4rem 7rem; */
-  padding: 0.8% 3.1399%;
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 /* header */
+#header {
+  border-bottom: 3px solid #000;
+  height: 5rem;
+}
 #header nav {
   display: flex;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
 }
@@ -118,22 +121,18 @@ a:hover {
   top: 2px;
   left: 2px;
 }
-#header::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #000;
-  margin-top: 1.2rem;
-}
 
 /* footer */
+#footer {
+  height: 4rem;
+  border-top: 3px solid #000;
+}
 #footer .info {
   display: flex;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
   font-size: 1.6rem;
-  margin-top: 1rem;
 }
 #footer .info li:nth-child(1),
 #footer .info li:nth-child(3) {
@@ -150,11 +149,4 @@ a:hover {
   width: 3rem;
   height: 1.5rem;
   background: url(../img/footer-pic02.svg) no-repeat 0 0 / cover;
-}
-#footer::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #000;
 }
