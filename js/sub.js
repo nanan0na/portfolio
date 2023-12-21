@@ -3,10 +3,6 @@ $(function () {
   const conList1 = new Swiper('.con-list1', {
     loop: true,
     loopedSlides: 1,
-    // autoplay: {
-    //   delay: 3000,
-    //   /*  pauseOnMouseEnter: true, */
-    // },
     slidesPerView: 4,
     spaceBetween: 0,
     navigation: {
@@ -28,4 +24,10 @@ $(function () {
   // $('.con-list1 li:eq(2)').on('ready', function () {
   // $('.web h2').text('RESPONSIVE WEB');
   // });
+
+  // 임시
+  // autoplay: {
+  //   delay: 3000,
+  //   /*  pauseOnMouseEnter: true, */
+  // },
 });
