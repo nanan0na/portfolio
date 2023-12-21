@@ -4,7 +4,7 @@ $(function () {
     loop: true,
     loopedSlides: 1,
     // autoplay: {
-    //   delay: 300,
+    //   delay: 3000,
     //   /*  pauseOnMouseEnter: true, */
     // },
     slidesPerView: 4,
