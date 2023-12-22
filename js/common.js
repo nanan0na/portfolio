@@ -2,6 +2,7 @@ $(function () {
   // cursor
   const $window = $(window);
   const $cursor = $('.cursor');
+  const $aboutCursor = $('.about-cursor');
   const $point = $('a, button, label, .info');
 
   $window.on('mousemove', function (e) {
@@ -9,6 +10,10 @@ $(function () {
     let mouseY = e.pageY;
     /* console.log(e); */
     $cursor.css({
+      left: mouseX,
+      top: mouseY,
+    });
+    $aboutCursor.css({
       left: mouseX,
       top: mouseY,
     });

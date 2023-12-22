@@ -30,9 +30,9 @@
   font-size: 1.6rem;
   padding-right: 7rem;
   height: 100%;
+  margin-left: -3px;
 }
 .con-list1 ul li {
-  margin-left: -3px;
   border-left: 3px solid #000;
   width: 17rem;
   height: 100%;
@@ -64,17 +64,6 @@
   border: 3px solid #000;
   border-radius: 50%;
   position: absolute;
-}
-.con-list1 .btn-next {
-  display: block;
-  text-indent: -999px;
-  overflow: hidden;
-  width: 2rem;
-  height: 2.4rem;
-  background: url(../img/next-button.svg) no-repeat 0 0 / contain;
-  position: absolute;
-  top: 13.7%;
-  right: 2.2%;
 }
 
 .web-view .swiper-slide {
@@ -333,4 +322,73 @@
 }
 .about-list li:hover .page-button {
   color: #fff;
+}
+
+/* about-profile */
+.profile {
+  background: url(../img/profile-bg.jpg) no-repeat 0 0 / cover;
+  color: #fff;
+  position: relative;
+}
+.profile .back-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.profile-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 15rem;
+}
+.profile-title {
+  text-align: center;
+}
+.profile-title h2 {
+  font-size: 4rem;
+}
+.profile-title p {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 1.5rem;
+}
+.profile-text {
+  font-family: 'Pretendard';
+}
+.profile-text .profile-text-list > li {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2.4rem;
+}
+.profile-text .profile-text-list > li h3 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  width: 13.7rem;
+}
+.profile-text .profile-text-list > li p {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.skill-list {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* 커서가 헤더에 닿으면 줄어드는 거 */
+.about-cursor {
+  width: 27rem;
+  height: 27rem;
+  background: rgb(242, 255, 241);
+  opacity: 0.8;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
 }
