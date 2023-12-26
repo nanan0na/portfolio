@@ -12,9 +12,9 @@ window.addEventListener('load', () => {
     },
     3
   );
-  tl.to('.visual-text', { color: '#fff' }, '-=.2');
-  tl.to('.sub-img1', { autoAlpha: 1, y: 30 }, '<');
-  tl.to('.sub-img2', { autoAlpha: 1, x: -20 }, '-=.1');
+  tl.to('.visual-text', { color: '#fff' }, '<');
+  tl.to('.sub-img1', { autoAlpha: 1, y: 30 }, '-=.1');
+  tl.to('.sub-img2', { autoAlpha: 1, x: -20 }, '<');
   tl.to(
     '.sub-img3',
     {

@@ -36,13 +36,13 @@ a:hover {
 
 /* cursor */
 .cursor {
-  position: fixed;
-  z-index: 999;
+  position: absolute;
+  z-index: 99999;
   top: 0;
   left: 0;
   width: 1.5rem;
   height: 1.5rem;
-  background: rgba(3, 3, 3, 1);
+  background: #333;
   border-radius: 50%;
   pointer-events: none;
   user-select: none;
