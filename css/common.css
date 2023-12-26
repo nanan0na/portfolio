@@ -58,6 +58,25 @@ a:hover {
 .cursor.click {
   animation: cursorAni 0.4s;
 }
+
+/* 커서가 헤더에 닿으면 줄어드는 거 */
+.about-cursor {
+  width: 27rem;
+  height: 27rem;
+  background: rgb(242, 255, 241);
+  opacity: 0.8;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+
 @keyframes cursorAni {
   100% {
     width: 5rem;

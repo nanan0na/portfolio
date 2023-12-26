@@ -19,6 +19,7 @@ $(function () {
     });
   });
 
+  /* about 상세에 들어가면 마우스 커서 바뀌게 */
   $('#header').on('mouseenter', function () {
     $aboutCursor.css({
       width: '15px',

@@ -233,6 +233,8 @@
   grid-row: 4/5;
 }
 /* about */
+.about {
+}
 .about-wrap {
   border-left: 3px solid #000;
   border-right: 3px solid #000;
@@ -252,17 +254,6 @@
   height: 100%;
   position: relative;
 }
-
-.about-list li a:hover::before {
-  bottom: 0;
-  transition: 0.6s ease;
-  width: 100%;
-  height: 100%;
-}
-.about-list li a:hover .about-list-text {
-  color: #fff;
-  transition-delay: 0.1s;
-}
 .about-list li a::before {
   content: '';
   position: absolute;
@@ -270,7 +261,18 @@
   background: url(../img/about-pic01.jpg) no-repeat 0 0 / cover;
   bottom: -999px;
   overflow: hidden;
+  transition: 0.6s ease;
 }
+.about-list li a:hover::before {
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.about-list li a:hover .about-list-text {
+  color: #fff;
+  transition-delay: 0.1s;
+}
+
 .about-list li:last-child {
   border: none;
 }
@@ -283,7 +285,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .about-list-text {
   position: relative;
@@ -329,6 +331,7 @@
   background: url(../img/profile-bg.jpg) no-repeat 0 0 / cover;
   color: #fff;
   position: relative;
+  visibility: hidden;
 }
 .profile-con {
   display: flex;
@@ -389,22 +392,4 @@
   position: absolute;
   top: 25%;
   left: -50%;
-}
-
-/* 커서가 헤더에 닿으면 줄어드는 거 */
-.about-cursor {
-  width: 27rem;
-  height: 27rem;
-  background: rgb(242, 255, 241);
-  opacity: 0.8;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 998;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  user-select: none;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  transition: 0.2s;
 }
