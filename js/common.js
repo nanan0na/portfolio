@@ -19,6 +19,20 @@ $(function () {
     });
   });
 
+  $('#header').on('mouseenter', function () {
+    $aboutCursor.css({
+      width: '15px',
+      height: '15px',
+      opacity: 0,
+    });
+  });
+  $('#header').on('mouseleave', function () {
+    $aboutCursor.css({
+      width: '270px',
+      height: '270px',
+      opacity: 1,
+    });
+  });
   $window.on('mousedown', function () {
     $cursor.addClass('click');
   });

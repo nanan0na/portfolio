@@ -330,11 +330,6 @@
   color: #fff;
   position: relative;
 }
-.profile .back-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 .profile-con {
   display: flex;
   justify-content: space-between;
@@ -375,6 +370,26 @@
   align-items: center;
   gap: 0.8rem;
 }
+.profile .back-btn {
+  font-family: 'Pretendard';
+  font-size: 2rem;
+  color: #ccc;
+  margin-left: 4.7rem;
+  margin-top: 1.6rem;
+  position: absolute;
+}
+.profile .back-btn::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(../img/next-button-w.svg) no-repeat 0 0 / contain;
+  transform: rotate(180deg);
+  opacity: 0.7;
+  position: absolute;
+  top: 25%;
+  left: -50%;
+}
 
 /* 커서가 헤더에 닿으면 줄어드는 거 */
 .about-cursor {
@@ -391,4 +406,5 @@
   user-select: none;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%);
+  transition: 0.2s;
 }
