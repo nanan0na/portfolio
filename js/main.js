@@ -19,6 +19,7 @@ window.addEventListener('load', () => {
     '.sub-img3',
     {
       autoAlpha: 1,
+      onComplete: () => moving(),
     },
     '-=.1'
   );
@@ -46,13 +47,14 @@ window.addEventListener('load', () => {
     x = e.pageX;
     y = e.pageY;
 
+    // 6 코드일 때
+    // x = Math.max(-100, Math.min(200, e.pageX - $window.innerWidth() / 2));
+    // y = Math.max(-100, Math.min(100, e.pageY - $window.outerHeight() / 2));
+
     const ancho = $(window).width() / 2;
     const largo = $(window).height() / 2;
 
     mx = (ancho + x) * (1 / 90);
     my = (largo + y) * (1 / 80);
   });
-  setTimeout(function () {
-    moving();
-  }, 5000);
 });

@@ -2,7 +2,6 @@ $(function () {
   // cursor
   const $window = $(window);
   const $cursor = $('.cursor');
-  const $aboutCursor = $('.about-cursor');
   const $point = $('a, button, label, .info');
 
   $window.on('mousemove', function (e) {
@@ -13,7 +12,8 @@ $(function () {
       left: mouseX,
       top: mouseY,
     });
-    $aboutCursor.css({
+    /* about */
+    $('.cursor.event').css({
       left: mouseX,
       top: mouseY,
     });
@@ -21,18 +21,10 @@ $(function () {
 
   /* about 상세에 들어가면 마우스 커서 바뀌게 */
   $('#header').on('mouseenter', function () {
-    $aboutCursor.css({
-      width: '15px',
-      height: '15px',
-      opacity: 0,
-    });
+    $('.cursor.event').removeClass('event');
   });
   $('#header').on('mouseleave', function () {
-    $aboutCursor.css({
-      width: '270px',
-      height: '270px',
-      opacity: 1,
-    });
+    $('.cursor.event').addClass('event');
   });
   $window.on('mousedown', function () {
     $cursor.addClass('click');
@@ -54,5 +46,13 @@ $(function () {
     setTimeout(function () {
       $cursor.removeClass('click');
     }, 400);
+  });
+  const aboutExp = $('.profile, .about-more, .epilogue');
+  // about page cursor
+  aboutExp.on('mouseover', function () {
+    $cursor.addClass('event');
+  });
+  aboutExp.on('mouseout', function () {
+    $cursor.addClass('event');
   });
 });

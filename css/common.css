@@ -60,7 +60,7 @@ a:hover {
 }
 
 /* 커서가 헤더에 닿으면 줄어드는 거 */
-.about-cursor {
+.cursor.event {
   width: 27rem;
   height: 27rem;
   background: rgb(242, 255, 241);

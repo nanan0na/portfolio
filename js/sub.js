@@ -34,4 +34,20 @@ $(function () {
   });
   conList1.controller.control = conList2;
   conList2.controller.control = conList1;
+
+  /* about */
+  const aboutTL = gsap.timeline();
+  $('.about-list li:nth-child(1)').on('click', () => {
+    aboutTL
+      .from('.profile', { autoAlpha: 0, width: 0, ease: 'power4.out' })
+      .to('.about-wrap', { opacity: 0, x: () => window.innerWidth }, '<')
+      .from('.profile-title', { autoAlpha: 0, x: -10 })
+      .from('.profile-text ', { autoAlpha: 0 }, '-=0.8');
+  });
+  $('.back-btn').on('click', () => {
+    aboutTL
+      .to('.about-wrap', { opacity: 1, x: 0 })
+      // class로 바꾸기
+      .to('.profile', { autoAlpha: 0, width: 0, ease: 'power4.out' }, '<');
+  });
 });
