@@ -21,10 +21,10 @@ $(function () {
 
   /* about 상세에 들어가면 마우스 커서 바뀌게 */
   $('#header').on('mouseenter', function () {
-    $('.cursor.event').removeClass('event');
+    $('.cursor').removeClass('event');
   });
   $('#header').on('mouseleave', function () {
-    $('.cursor.event').addClass('event');
+    $('.cursor').addClass('event');
   });
   $window.on('mousedown', function () {
     $cursor.addClass('click');
@@ -47,12 +47,13 @@ $(function () {
       $cursor.removeClass('click');
     }, 400);
   });
-  const aboutExp = $('.profile, .about-more, .epilogue');
+  const aboutExp = $('.about-list li');
+  const backBtn = $('.back-btn');
   // about page cursor
-  aboutExp.on('mouseover', function () {
+  aboutExp.on('click', function () {
     $cursor.addClass('event');
   });
-  aboutExp.on('mouseout', function () {
-    $cursor.addClass('event');
+  backBtn.on('click', function () {
+    $cursor.removeClass('event');
   });
 });

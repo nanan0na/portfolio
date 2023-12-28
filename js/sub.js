@@ -36,18 +36,53 @@ $(function () {
   conList2.controller.control = conList1;
 
   /* about */
-  const aboutTL = gsap.timeline();
+
+  // 타임라인을 일시 중지 상태로 시작
+  const aboutTL = gsap.timeline({ paused: true });
+
+  // 1
   $('.about-list li:nth-child(1)').on('click', () => {
+    $('.profile').addClass('on');
     aboutTL
-      .from('.profile', { autoAlpha: 0, width: 0, ease: 'power4.out' })
-      .to('.about-wrap', { opacity: 0, x: () => window.innerWidth }, '<')
+      .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
       .from('.profile-title', { autoAlpha: 0, x: -10 })
-      .from('.profile-text ', { autoAlpha: 0 }, '-=0.8');
+      .from('.profile-text ', { autoAlpha: 0 }, '-=0.4');
+
+    aboutTL.play();
   });
-  $('.back-btn').on('click', () => {
+
+  // 2
+  $('.about-list li:nth-child(2)').on('click', () => {
+    $('.more-about').addClass('on');
     aboutTL
-      .to('.about-wrap', { opacity: 1, x: 0 })
-      // class로 바꾸기
-      .to('.profile', { autoAlpha: 0, width: 0, ease: 'power4.out' }, '<');
+      .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
+      .from('.more-about-title', { autoAlpha: 0, opcity: 1, x: -10 })
+      .from('.more-about-text ', { autoAlpha: 0, opcity: 1 }, '-=0.4');
+
+    aboutTL.play();
+  });
+
+  // 3
+  $('.about-list li:nth-child(3)').on('click', () => {
+    $('.epilogue').addClass('on');
+    aboutTL
+      .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
+      .from('.epilogue-title', { autoAlpha: 0, x: -10 })
+      .from('.epilogue-text ', { autoAlpha: 0 }, '-=0.4');
+
+    aboutTL.play();
+  });
+
+  // backBtn 누를 때
+  const backBtn = gsap.utils.toArray(document.querySelectorAll('.back-btn'));
+
+  backBtn.forEach((item) => {
+    item.addEventListener('click', () => {
+      $('section').removeClass('on');
+
+      aboutTL /* .to('.profile', { ease: 'power1.out' }) */
+        .to('.about-wrap', { opacity: 1, x: 0, ease: 'power1.out' }, '<');
+      aboutTL.play();
+    });
   });
 });
