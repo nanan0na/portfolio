@@ -343,13 +343,16 @@
   height: 100%;
   /*  pointer-events: none; */
 
-  /* visibility: hidden; */
+  /* 
   overflow: hidden;
-  transition: 0.3s;
+  transition: 0.3s; */
+  visibility: hidden;
+  /* clip-path: inset(0 0 33.333% 0); */
 }
+
 .profile.on {
-  left: 0;
-  top: 0;
+  /*  left: 0;
+  top: 0; */
 }
 .about-con {
   display: flex;
