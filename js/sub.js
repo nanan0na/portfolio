@@ -45,8 +45,8 @@ $(function () {
     $('.profile').addClass('on');
     aboutTL
       .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
-      .from('.profile-title', { autoAlpha: 0, x: -10 })
-      .from('.profile-text ', { autoAlpha: 0 }, '-=0.4');
+      .from('.profile-title', { autoAlpha: 0, x: -10, delay: 0.3 })
+      .from('.profile-text ', { autoAlpha: 0 }, '-=0.1');
 
     aboutTL.play();
   });
@@ -56,8 +56,8 @@ $(function () {
     $('.more-about').addClass('on');
     aboutTL
       .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
-      .from('.more-about-title', { autoAlpha: 0, opcity: 1, x: -10 })
-      .from('.more-about-text ', { autoAlpha: 0, opcity: 1 }, '-=0.4');
+      .from('.more-about-title', { autoAlpha: 0, opcity: 1, x: -10, delay: 0.3 })
+      .from('.more-about-text ', { autoAlpha: 0, opcity: 1 }, '-=0.1');
 
     aboutTL.play();
   });
@@ -67,8 +67,8 @@ $(function () {
     $('.epilogue').addClass('on');
     aboutTL
       .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
-      .from('.epilogue-title', { autoAlpha: 0, x: -10 })
-      .from('.epilogue-text ', { autoAlpha: 0 }, '-=0.4');
+      .from('.epilogue-title', { autoAlpha: 0, x: -10, delay: 0.3 })
+      .from('.epilogue-text ', { autoAlpha: 0 }, '-=0.1');
 
     aboutTL.play();
   });

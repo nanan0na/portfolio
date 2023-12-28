@@ -19,13 +19,6 @@ $(function () {
     });
   });
 
-  /* about 상세에 들어가면 마우스 커서 바뀌게 */
-  $('#header').on('mouseenter', function () {
-    $('.cursor').removeClass('event');
-  });
-  $('#header').on('mouseleave', function () {
-    $('.cursor').addClass('event');
-  });
   $window.on('mousedown', function () {
     $cursor.addClass('click');
   });
@@ -47,13 +40,26 @@ $(function () {
       $cursor.removeClass('click');
     }, 400);
   });
-  const aboutExp = $('.about-list li');
-  const backBtn = $('.back-btn');
+
   // about page cursor
-  aboutExp.on('click', function () {
+  const backBtn = $('.back-btn');
+
+  $('.about section').on('mouseenter', function () {
     $cursor.addClass('event');
+    // 헤더에 마우스가 올라가면 event 클래스 제거
+    $('#header').on('mouseenter', function () {
+      $cursor.removeClass('event');
+    });
+    $('#header').on('mouseleave', function () {
+      $cursor.addClass('event');
+    });
   });
+
   backBtn.on('click', function () {
     $cursor.removeClass('event');
+    // 헤더에 마우스가 올라가면 event 클래스 제거
+    $('#header').on('mouseleave', function () {
+      $cursor.removeClass('event');
+    });
   });
 });
