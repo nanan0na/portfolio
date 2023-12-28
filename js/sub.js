@@ -4,7 +4,7 @@ $(function () {
     loop: true,
     // autoplay: {
     //   delay: 3000,
-    //   /*  pauseOnMouseEnter: true, */
+    //   pauseOnMouseEnter: true,
     // },
     loopedSlides: 5,
     slidesPerView: 4,
@@ -24,6 +24,7 @@ $(function () {
   const conList2 = new Swiper('.con-list2', {
     loop: true,
     slidesPerView: 1,
+
     loopedSlides: 5,
     slideToClickedSlide: true,
     navigation: {
