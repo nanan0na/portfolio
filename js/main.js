@@ -47,7 +47,7 @@ window.addEventListener('load', () => {
     x = e.pageX;
     y = e.pageY;
 
-    // 6 코드일 때
+    // 6, 코드일 때
     // x = Math.max(-100, Math.min(200, e.pageX - $window.innerWidth() / 2));
     // y = Math.max(-100, Math.min(100, e.pageY - $window.outerHeight() / 2));
 
