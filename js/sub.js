@@ -41,25 +41,7 @@ $(function () {
   // 타임라인을 일시 중지 상태로 시작
   const aboutTL = gsap.timeline({ paused: true });
 
-  // script
-  // gsap.from('.wrap2 figure', {
-  //   clipPath: 'inset(0 0 100% 0)',
-  //   duration: 2,
-  //   ease: 'power4.inOut',
-  // });
-
-  // css
-  // .wrap figure {
-  //   clip-path: inset(0 100% 0 0);
-  //   animation: ani 3s both;
-  // }
-  // @keyframes ani {
-  //   to {
-  //     clip-path: inset(0 0 0 0);
-  //   }
-  // }
-
-  // 1
+  // 1 : original
   // $('.about-list li:nth-child(1)').on('click', () => {
   //   $('.profile').addClass('on');
   //   aboutTL
@@ -70,27 +52,70 @@ $(function () {
   //   aboutTL.play();
   // });
 
+  // backBtn.forEach((item) => {
+  //   item.addEventListener('click', () => {
+  //     $('section').removeClass('on');
+
+  //     aboutTL /* .to('.profile', { ease: 'power1.out' }) */
+  //       .to('.about-wrap', { opacity: 1, x: 0, ease: 'power1.out' }, '<');
+  //     aboutTL.play();
+  //   });
+  // });
+
+  // 1차 수정
+  // $('.about-list li:nth-child(1)').on('click', () => {
+  //   aboutTL
+  //     .set('.profile', { left: 0 })
+  //     .to('.about-wrap', { opacity: 0, x: window.innerWidth, clipPath: 'inset(0 0 0 100%)' })
+  //     .from(
+  //       '.profile',
+  //       {
+  //         clipPath: 'inset(0 100% 0 0)',
+  //         duration: 0.4,
+  //         /* delay: 0.2, */
+  //       },
+  //       '-=.3'
+  //     )
+  //     .from('.profile-title', { autoAlpha: 0, x: -10, delay: 0.3 })
+  //     .from('.profile-text ', { autoAlpha: 0 }, '-=0.1');
+
+  //   aboutTL.play();
+  // });
+
+  // backBtn.forEach((item) => {
+  //   item.addEventListener('click', () => {
+  //     aboutTL
+  //       .to(
+  //         '.profile',
+  //         {
+  //           clipPath: 'inset(0 66.6666% 0 0)',
+  //           /* left: '-100%', */
+  //           duration: 0.4,
+  //         },
+  //         '-=.3'
+  //       )
+  //       .to('.profile', { autoAlpha: 0 })
+  //       .from('.about-wrap', { opacity: 1, x: 0, ease: 'power1.out' }, '<');
+
+  //     aboutTL.play();
+  //   });
+  // });
+
+  // 2차 수정
+
   // clip-path가 33.333퍼센트에 머무르다가,
   // 클릭하면 확장되고,
   // 원래있던 배경은 밀려나가면서(동시),
   // 글자들은 하나 둘씩 생겨간다
 
-  // back-btn을 누르면 100%로 확장되어 있던
-  // clip-path가 33.3333퍼센트까지 줄어들면서 hidden되게 만든다,
-  // 글자는 동시에 사라진다(동시)
-  // 밀려나갔던 원래 있던 배경이 다시 나온다
-
-  // 수정중
+  // 1
   $('.about-list li:nth-child(1)').on('click', () => {
+    $('.profile').addClass('on');
     aboutTL
-      .from('.profile', {
-        autoAlpha: 0,
-        clipPath: 'inset(0 33.3% 0 0)',
-        duration: 2,
-      })
-      .to('.about-wrap', { opacity: 0, x: window.innerWidth, clipPath: 'inset(0 0 0 100%)' }, '<')
-      .from('.profile-title', { autoAlpha: 0, x: -10, delay: 0.3 })
-      .from('.profile-text ', { autoAlpha: 0 }, '-=0.1');
+      .to('.profile', { opacity: 1 }, '<')
+      .to('.about-wrap', { opacity: 0 }, '<')
+      .to('.profile-title', { autoAlpha: 1, x: -10, delay: 0.3 })
+      .to('.profile-text ', { autoAlpha: 1 }, '-=0.1');
 
     aboutTL.play();
   });
@@ -99,9 +124,10 @@ $(function () {
   $('.about-list li:nth-child(2)').on('click', () => {
     $('.more-about').addClass('on');
     aboutTL
-      .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
-      .from('.more-about-title', { autoAlpha: 0, opcity: 1, x: -10, delay: 0.3 })
-      .from('.more-about-text ', { autoAlpha: 0, opcity: 1 }, '-=0.1');
+      .to('.more-about', { opacity: 1 }, '<')
+      .to('.about-wrap', { opacity: 0 }, '<')
+      .to('.more-about-title', { autoAlpha: 1, x: -10, delay: 0.3 })
+      .to('.more-about-text ', { autoAlpha: 1 }, '-=0.1');
 
     aboutTL.play();
   });
@@ -110,39 +136,42 @@ $(function () {
   $('.about-list li:nth-child(3)').on('click', () => {
     $('.epilogue').addClass('on');
     aboutTL
-      .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
-      .from('.epilogue-title', { autoAlpha: 0, x: -10, delay: 0.3 })
-      .from('.epilogue-text ', { autoAlpha: 0 }, '-=0.1');
+      .to('.epilogue', { opacity: 1 }, '<')
+      .to('.about-wrap', { opacity: 0 }, '<')
+      .to('.epilogue-title', { autoAlpha: 1, x: -10, delay: 0.3 })
+      .to('.epilogue-text ', { autoAlpha: 1 }, '-=0.1');
 
     aboutTL.play();
   });
 
   // backBtn 누를 때
-  const backBtn = gsap.utils.toArray(document.querySelectorAll('.back-btn'));
 
+  // back-btn을 누르면 100%로 확장되어 있던
+  // clip-path가 33.3333퍼센트까지 줄어들면서 hidden되게 만든다,
+  // 글자는 동시에 사라진다(동시)
+  // 밀려나갔던 원래 있던 배경이 다시 나온다
+
+  const backBtn = gsap.utils.toArray(document.querySelectorAll('.back-btn'));
   backBtn.forEach((item) => {
     item.addEventListener('click', () => {
-      $('section').removeClass('on');
+      aboutTL.to('.about-title', { autoAlpha: 0, x: -10 });
+      aboutTL.to('.about-text ', { autoAlpha: 0 });
+      aboutTL.to('section', {
+        onComplete: () => {
+          $('section').removeClass('on');
+        },
+      });
+      aboutTL.to(
+        'section',
+        {
+          opacity: 0,
+          delay: 0.3,
+        },
+        '-=.2'
+      );
+      aboutTL.to('.about-wrap', { opacity: 1 }, '-=.7');
 
-      aboutTL /* .to('.profile', { ease: 'power1.out' }) */
-        .to('.about-wrap', { opacity: 1, x: 0, ease: 'power1.out' }, '<');
       aboutTL.play();
     });
   });
 });
-
-// 함수를 사용하여 섹션 애니메이션 생성
-// 나중에 함수로 담을 거
-// function createSectionAnimation(sectionSelector, titleSelector, textSelector) {
-//   return aboutTL
-//     .from(sectionSelector, { autoAlpha: 0, clipPath: 'inset(0 33.3% 0 0)', duration: 2 })
-//     .to('.about-wrap', { opacity: 0, x: window.innerWidth, clipPath: 'inset(0 0 0 100%)' }, '<')
-//     .from(titleSelector, { autoAlpha: 0, x: -10, delay: 0.3 })
-//     .from(textSelector, { autoAlpha: 0 }, '-=0.1');
-// }
-
-// // 1번 섹션 클릭 시 애니메이션
-// $('.about-list li:nth-child(1)').on('click', () => {
-//   createSectionAnimation('.profile', '.profile-title', '.profile-text');
-//   aboutTL.play();
-// });
