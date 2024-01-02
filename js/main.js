@@ -15,14 +15,10 @@ window.addEventListener('load', () => {
   tl.to('.visual-text', { color: '#fff' }, '<');
   tl.to('.sub-img1', { autoAlpha: 1, y: 30 }, '-=.1');
   tl.to('.sub-img2', { autoAlpha: 1, x: -20 }, '<');
-  tl.to(
-    '.sub-img3',
-    {
-      autoAlpha: 1,
-      onComplete: () => moving(),
-    },
-    '-=.1'
-  );
+  tl.to('.sub-img3', {
+    autoAlpha: 1,
+    onComplete: () => moving(),
+  });
 
   /* 마우스에 따라 사진 움직이기 */
   let x;

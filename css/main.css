@@ -110,3 +110,5 @@
 .next-button.on {
   background-image: url(../img/main-next-b.svg);
 }
+@keyframes buttonAni {
+}

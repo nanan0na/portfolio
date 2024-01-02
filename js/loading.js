@@ -22,7 +22,7 @@ $(function () {
       $target.fadeOut();
       setTimeout(function () {
         $target.remove();
-      }, 2000);
-    }, 3000);
+      }, 500);
+    }, 1000);
   });
 });
