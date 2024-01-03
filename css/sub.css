@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 /* web */
+
 .con-title {
   /* height: 17rem; */
   height: 8.8542vw;
@@ -492,4 +493,21 @@
 }
 .epilogue-text-list > li p {
   margin-top: 2rem;
+}
+
+/* darkMode */
+.con-title.dark,
+.con-title h2.dark,
+.con-list1 ul li.dark,
+.con-list1 ul li.dark::before,
+.web-view figure.dark,
+.web-exp .web-view-title.dark,
+.web-exp .web-view-title .page-link a.dark,
+.graphic-list li img.dark,
+.about-wrap.dark,
+.about-list li.dark {
+  border-color: #fff;
+}
+.about-list li:hover .about-list-text.dark {
+  color: var(--main-color);
 }

@@ -20,6 +20,7 @@ body {
   /* cursor: none; */
   overflow: hidden;
 }
+
 label,
 a {
   text-decoration: none;
@@ -164,6 +165,14 @@ a:hover {
   top: 2px;
   left: 2px;
 }
+/* ? */
+#header .check input:checked + label {
+  background: var(--main-color);
+}
+.check input:checked + label::after {
+  left: 22px;
+  background: #000;
+}
 
 /* footer */
 #footer {
@@ -193,7 +202,6 @@ a:hover {
   height: 1.5rem;
   background: url(../img/footer-pic02.svg) no-repeat 0 0 / cover;
 }
-
 /* loading */
 .loading {
   position: fixed;
@@ -303,4 +311,21 @@ a:hover {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0;
   }
+}
+
+/* darkMode */
+body.dark,
+.loading.dark {
+  background: #111;
+  color: #fff;
+}
+#header.dark,
+#footer.dark {
+  border-color: #fff;
+}
+#header .logo.dark {
+  background-image: url(../img/logo-w.svg);
+}
+.cursor.dark {
+  background: #fff;
 }

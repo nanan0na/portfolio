@@ -62,4 +62,46 @@ $(function () {
       $cursor.removeClass('event');
     });
   });
+
+  // darkMode
+  const selectMode = $('#selectMode');
+  const darkSelectors = `
+      .con-title,
+      .con-title h2,
+      .con-list1 ul li,
+      .con-list1 ul li::before,
+      .web-view figure,
+      .web-exp .web-view-title,
+      .web-exp .web-view-title .page-link a,
+      .graphic-list li img,
+      .about-wrap,
+      .about-list li,
+      .about-list li:hover .about-list-text,
+      #header,
+      #footer,
+      body,
+      .loading,
+      #header .logo,
+      .cursor
+    `;
+  const $darkSelectors = $(darkSelectors);
+
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  selectMode.prop('checked', isDarkMode);
+  $darkSelectors.toggleClass('dark', isDarkMode);
+
+  // 저장
+  selectMode.on('click', function () {
+    const isChecked = $(this).prop('checked');
+    localStorage.setItem('darkMode', isChecked);
+    $darkSelectors.toggleClass('dark', isChecked);
+  });
+
+  if (isDarkMode) {
+    $darkSelectors.addClass('dark');
+    selectMode.prop('checked', true);
+  } else {
+    $darkSelectors.removeClass('dark');
+    selectMode.prop('checked', false);
+  }
 });
