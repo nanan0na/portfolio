@@ -82,26 +82,21 @@ $(function () {
       body,
       .loading,
       #header .logo,
-      .cursor
+      .cursor,
+      #footer .info li:nth-child(1),
+      #footer .info li:nth-child(3),
+      .web-exp .web-view-text .web-view-text-list li > .tool-list
     `;
   const $darkSelectors = $(darkSelectors);
 
+  // 저장
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
   selectMode.prop('checked', isDarkMode);
   $darkSelectors.toggleClass('dark', isDarkMode);
 
-  // 저장
   selectMode.on('click', function () {
     const isChecked = $(this).prop('checked');
     localStorage.setItem('darkMode', isChecked);
     $darkSelectors.toggleClass('dark', isChecked);
   });
-
-  if (isDarkMode) {
-    $darkSelectors.addClass('dark');
-    selectMode.prop('checked', true);
-  } else {
-    $darkSelectors.removeClass('dark');
-    selectMode.prop('checked', false);
-  }
 });

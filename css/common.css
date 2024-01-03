@@ -164,6 +164,7 @@ a:hover {
   position: absolute;
   top: 2px;
   left: 2px;
+  transition: 0.3s;
 }
 /* ? */
 #header .check input:checked + label {
@@ -186,6 +187,9 @@ a:hover {
   align-items: center;
   font-size: 1.6rem;
 }
+#footer .info li a {
+  display: block;
+}
 #footer .info li:nth-child(1),
 #footer .info li:nth-child(3) {
   text-indent: -999px;
@@ -196,6 +200,7 @@ a:hover {
   width: 3.9rem;
   height: 2rem;
   background: url(../img/footer-pic01.svg) no-repeat 0 0 / cover;
+  cursor: pointer;
 }
 #footer .info li:nth-child(3) {
   width: 3rem;
@@ -328,4 +333,8 @@ body.dark,
 }
 .cursor.dark {
   background: #fff;
+}
+#footer .info li:nth-child(1).dark,
+#footer .info li:nth-child(3).dark {
+  filter: invert(1);
 }

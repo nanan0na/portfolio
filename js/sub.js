@@ -41,68 +41,6 @@ $(function () {
   // 타임라인을 일시 중지 상태로 시작
   const aboutTL = gsap.timeline({ paused: true });
 
-  // 1 : original
-  // $('.about-list li:nth-child(1)').on('click', () => {
-  //   $('.profile').addClass('on');
-  //   aboutTL
-  //     .to('.about-wrap', { opacity: 0, x: window.innerWidth }, '<')
-  //     .from('.profile-title', { autoAlpha: 0, x: -10, delay: 0.3 })
-  //     .from('.profile-text ', { autoAlpha: 0 }, '-=0.1');
-
-  //   aboutTL.play();
-  // });
-
-  // backBtn.forEach((item) => {
-  //   item.addEventListener('click', () => {
-  //     $('section').removeClass('on');
-
-  //     aboutTL /* .to('.profile', { ease: 'power1.out' }) */
-  //       .to('.about-wrap', { opacity: 1, x: 0, ease: 'power1.out' }, '<');
-  //     aboutTL.play();
-  //   });
-  // });
-
-  // 1차 수정
-  // $('.about-list li:nth-child(1)').on('click', () => {
-  //   aboutTL
-  //     .set('.profile', { left: 0 })
-  //     .to('.about-wrap', { opacity: 0, x: window.innerWidth, clipPath: 'inset(0 0 0 100%)' })
-  //     .from(
-  //       '.profile',
-  //       {
-  //         clipPath: 'inset(0 100% 0 0)',
-  //         duration: 0.4,
-  //         /* delay: 0.2, */
-  //       },
-  //       '-=.3'
-  //     )
-  //     .from('.profile-title', { autoAlpha: 0, x: -10, delay: 0.3 })
-  //     .from('.profile-text ', { autoAlpha: 0 }, '-=0.1');
-
-  //   aboutTL.play();
-  // });
-
-  // backBtn.forEach((item) => {
-  //   item.addEventListener('click', () => {
-  //     aboutTL
-  //       .to(
-  //         '.profile',
-  //         {
-  //           clipPath: 'inset(0 66.6666% 0 0)',
-  //           /* left: '-100%', */
-  //           duration: 0.4,
-  //         },
-  //         '-=.3'
-  //       )
-  //       .to('.profile', { autoAlpha: 0 })
-  //       .from('.about-wrap', { opacity: 1, x: 0, ease: 'power1.out' }, '<');
-
-  //     aboutTL.play();
-  //   });
-  // });
-
-  // 2차 수정 --> 완료!
-
   // clip-path가 33.333퍼센트에 머무르다가,
   // 클릭하면 확장되고,
   // 원래있던 배경은 밀려나가면서(동시),
@@ -174,4 +112,6 @@ $(function () {
       aboutTL.play();
     });
   });
+
+  // 히든
 });
