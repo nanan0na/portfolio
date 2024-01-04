@@ -147,24 +147,51 @@
 }
 
 /* graphic */
+
+/* 좌우 버튼 추가, 닫기 버튼 생성, 스크롤 디자인 */
+
 .dim {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(7px);
-  z-index: 99;
+  background: #111;
+  opacity: 0.8;
+  backdrop-filter: blur(2px);
+  /* 버튼이 뜬다,,, */
+  z-index: 10;
   display: none;
 }
-/* .graphic-up {
+.popup {
   position: fixed;
   top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border: 10px solid #000;
-  background: #fff;
+  transform: translate(-50%, -50%) skewY(10deg);
+  border: 3px solid #fff;
+  border-radius: 3px;
+
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0, 0.3, 0, 1.17);
+  pointer-events: none;
+  z-index: 20;
+}
+.popup.active {
+  opacity: 1;
+  top: 50%;
+  transform: translate(-50%, -50%) skewY(0deg);
+  pointer-events: auto;
+  z-index: 20;
+}
+.gallery-content {
+  overflow-y: auto;
+  max-height: 70vh; /* 세로 길이를 윈도우 창의 70%로 제한 */
+}
+
+.gallery-content img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .btn-close {
   position: absolute;
@@ -176,10 +203,6 @@
   border: none;
   cursor: pointer;
 }
- */
-.btn-close {
-  display: none;
-}
 .graphic h3 {
   font-size: 4.8rem;
 }
@@ -190,18 +213,69 @@
 .graphic-list {
   display: grid;
   height: 100%;
-  grid-template-columns: 24.43820224719101% 24.43820224719101% 24.15730337078652% 26.12359550561798%;
+  grid-template-columns: 24% 25% 25% 26%;
   grid-template-rows: 29% 19% 14% 38%;
 }
 .graphic-list li {
   height: 100%;
   padding: 3px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
 }
+
+.graphic-list li:hover .graphic-text {
+  opacity: 1;
+}
+.graphic-list li:hover::before {
+  opacity: 1;
+}
+.graphic-list li::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+.graphic-text {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  color: #fff;
+  font-family: 'Pretendard';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s;
+}
+.graphic-list li strong {
+  font-weight: 800;
+  font-size: 3.6rem;
+  width: 24rem;
+  display: block;
+}
+.graphic-list li p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  width: 100%;
+}
+
 .graphic-list li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #f39;
+  /* background: #000; */
   border: 2px solid #000;
 }
 .graphic-list li:nth-child(1) {
@@ -232,6 +306,7 @@
   grid-column: 4/5;
   grid-row: 4/5;
 }
+
 /* about */
 .about {
   position: relative;
@@ -500,6 +575,18 @@
   width: 90rem;
   height: 100%;
 }
+.hidden-page {
+  position: relative;
+}
+.hidden-page h2 {
+  font-size: 2rem;
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
 .hidden-page figure img {
   width: 100%;
   height: 100%;
@@ -554,7 +641,7 @@
   left: 203px;
 }
 
-.hidden-page p {
+.Words-line p {
   height: 50px;
   line-height: 45px;
   padding: 0 10px;

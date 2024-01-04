@@ -36,6 +36,88 @@ $(function () {
   conList1.controller.control = conList2;
   conList2.controller.control = conList1;
 
+  // 그래픽
+
+  const $dim = $('.dim');
+  const $popup = $('.popup');
+  const $galleryContent = $('.gallery-content');
+  const $btnClose = $('.btn-close');
+  const $gallery = $('.graphic-list > li');
+  const $window = $(window);
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const $target = $gallery.eq(index).find('img');
+    const imgSrc = $target.attr('src');
+    const imgTitle = $target.attr('alt');
+
+    const loadImage = $('<img/>').on('load', function () {
+      const $image = $(this);
+      $galleryContent.html($image);
+      $image.css({
+        'object-fit': 'cover',
+        height: '70%',
+        'max-width': '100%',
+      });
+
+      const windowWidth = $window.width();
+      const maxPopupWidth = Math.min(windowWidth * 0.9);
+      $popup.css('max-width', maxPopupWidth);
+
+      // 중복 제거
+      $image.off('load');
+    });
+
+    loadImage.attr('src', imgSrc);
+    $galleryContent.prepend(`<div class="title">${imgTitle}</div>`);
+  }
+
+  $gallery.on('click', function () {
+    $dim.fadeIn();
+    $popup.addClass('active');
+
+    const $target = $(this).find('img');
+    const imgSrc = $target.attr('src');
+    const imgTitle = $target.attr('alt');
+
+    if (imgSrc) {
+      showImage($gallery.index(this));
+    }
+  });
+
+  // 좌우버튼
+  $(document).keydown(function (e) {
+    if ($popup.hasClass('active')) {
+      if (e.keyCode == 37) {
+        currentIndex = (currentIndex - 1 + $gallery.length) % $gallery.length;
+        showImage(currentIndex);
+      } else if (e.keyCode == 39) {
+        currentIndex = (currentIndex + 1) % $gallery.length;
+        showImage(currentIndex);
+      }
+    }
+  });
+
+  // 닫을 떄
+  function close() {
+    $dim.fadeOut();
+    $popup.removeClass('active');
+    $galleryContent.html('');
+    $popup.css('width', '');
+  }
+  $dim.on('click', function () {
+    close();
+  });
+  $btnClose.on('click', function () {
+    close();
+  });
+  // esc 누를 때 지워짐
+  $(document).keydown(function (e) {
+    if (e.keyCode == 27) {
+      close();
+    }
+  });
+
   /* about */
 
   // 타임라인을 일시 중지 상태로 시작
