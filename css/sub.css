@@ -496,9 +496,14 @@
 }
 
 /* hidden */
-.hidden-page video {
-  width: 76rem;
+.hidden-page figure {
+  width: 90rem;
   height: 100%;
+}
+.hidden-page figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .Words {
@@ -549,7 +554,7 @@
   left: 203px;
 }
 
-p {
+.hidden-page p {
   height: 50px;
   line-height: 45px;
   padding: 0 10px;

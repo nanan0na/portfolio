@@ -109,6 +109,9 @@ a:hover {
   display: block;
   background: url(../img/logo.svg) no-repeat 0 0 / contain;
 }
+#header .logo a {
+  display: block;
+}
 #header nav {
   display: flex;
   height: 100%;
