@@ -25,11 +25,9 @@ label,
 a {
   text-decoration: none;
   color: inherit;
-  /* cursor: none; */
 }
 a:hover {
   text-decoration: none;
-  /*  cursor: none; */
 }
 
 /* cursor */
@@ -135,8 +133,6 @@ a:hover {
   position: relative;
 }
 
-/* 해당페이지에 도달시 메뉴에 active 클래스 */
-
 .check {
   width: 40px;
   height: 20px;
@@ -169,7 +165,6 @@ a:hover {
   left: 2px;
   transition: 0.3s;
 }
-/* ? */
 #header .check input:checked + label {
   background: var(--main-color);
 }
@@ -210,6 +205,7 @@ a:hover {
   height: 1.5rem;
   background: url(../img/footer-pic02.svg) no-repeat 0 0 / cover;
 }
+
 /* loading */
 .loading {
   position: fixed;

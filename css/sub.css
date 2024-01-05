@@ -148,19 +148,16 @@
 
 /* graphic */
 
-/* 좌우 버튼 추가, 닫기 버튼 생성, 스크롤 디자인 */
-
 .dim {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: #111;
+  background: #000;
   opacity: 0.8;
   backdrop-filter: blur(2px);
-  /* 버튼이 뜬다,,, */
-  z-index: 10;
+  z-index: 1;
   display: none;
 }
 .popup {
@@ -170,6 +167,7 @@
   transform: translate(-50%, -50%) skewY(10deg);
   border: 3px solid #fff;
   border-radius: 3px;
+  border-right: none;
 
   opacity: 0;
   transition: 0.3s cubic-bezier(0, 0.3, 0, 1.17);
@@ -184,8 +182,40 @@
   z-index: 20;
 }
 .gallery-content {
-  overflow-y: auto;
-  max-height: 70vh; /* 세로 길이를 윈도우 창의 70%로 제한 */
+  max-height: 70vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  position: relative;
+}
+
+.gallery-content .prev-btn,
+.gallery-content .next-btn {
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  top: 45%;
+}
+
+.gallery-content .next-btn {
+  right: 0%;
+  background: url(../img/graphic-next-btn.jpg) no-repeat 0 0 / contain;
+}
+.gallery-content .prev-btn {
+  left: 0%;
+  background: url(../img/graphic-next-btn.jpg) no-repeat 0 0 / contain;
+  transform: rotate(180deg);
+}
+
+.gallery-content::-webkit-scrollbar {
+  width: 7px;
+}
+.gallery-content::-webkit-scrollbar-thumb {
+  background-color: #afafaf;
+  border-radius: 2px;
+}
+.gallery-content::-webkit-scrollbar-track {
+  background-color: #fff;
 }
 
 .gallery-content img {
@@ -193,16 +223,23 @@
   width: 100%;
   height: 100%;
 }
-.btn-close {
+.popup.active .btn-close {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  background: #000;
-  color: #fff;
+  top: 3%;
+  right: 3%;
+  width: 3rem;
+  height: 3rem;
+  text-indent: -999px;
+  overflow: hidden;
   border: none;
   cursor: pointer;
+  background: transparent url(../img/btn-close.png) no-repeat 0 0 / cover;
+  transition: 0.2s;
 }
+.popup.active .btn-close:hover {
+  transform: rotate(180deg);
+}
+
 .graphic h3 {
   font-size: 4.8rem;
 }
@@ -601,7 +638,7 @@
   text-transform: uppercase;
   transform: translate3d(0, 0, 0);
   -webkit-font-smoothing: antialiased;
-  -webkit-font-kerning: normal;
+  /* -webkit-font-kerning: normal; */
   -webkit-text-size-adjust: 100%;
   position: absolute;
   top: 17%;

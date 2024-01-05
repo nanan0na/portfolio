@@ -66,6 +66,7 @@ $(function () {
 
       // 중복 제거
       $image.off('load');
+      $galleryContent.append('<div class="prev-btn"></div><div class="next-btn"></div>');
     });
 
     loadImage.attr('src', imgSrc);
@@ -86,14 +87,27 @@ $(function () {
   });
 
   // 좌우버튼
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % $gallery.length;
+    showImage(currentIndex);
+  }
+  function showPrevImage() {
+    currentIndex = (currentIndex - 1 + $gallery.length) % $gallery.length;
+    showImage(currentIndex);
+  }
+
+  $galleryContent.on('click', '.next-btn', function () {
+    showNextImage();
+  });
+  $galleryContent.on('click', '.prev-btn', function () {
+    showPrevImage();
+  });
   $(document).keydown(function (e) {
     if ($popup.hasClass('active')) {
       if (e.keyCode == 37) {
-        currentIndex = (currentIndex - 1 + $gallery.length) % $gallery.length;
-        showImage(currentIndex);
+        showPrevImage();
       } else if (e.keyCode == 39) {
-        currentIndex = (currentIndex + 1) % $gallery.length;
-        showImage(currentIndex);
+        showNextImage();
       }
     }
   });
@@ -194,6 +208,4 @@ $(function () {
       aboutTL.play();
     });
   });
-
-  // 히든
 });
