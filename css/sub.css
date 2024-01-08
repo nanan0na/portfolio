@@ -104,7 +104,7 @@
   border-bottom: 3px solid #000;
 }
 .web-exp .web-view-title .web-title {
-  margin: 2rem 0 2.8rem;
+  margin: 1.4rem 0 6.4rem;
   padding-left: 2.2rem;
 }
 .web-exp .web-view-title .web-title h3 {
@@ -116,7 +116,7 @@
 .web-exp .web-view-title .page-link {
   position: absolute;
   font-size: 1.6rem;
-  bottom: 10%;
+  bottom: 5%;
   right: 0;
   display: flex;
   gap: 0.7rem;
@@ -245,21 +245,23 @@
 }
 .graphic-wrap {
   width: 100%;
-  height: calc(100% - 7.2rem);
+  height: calc(100% - 6.8rem);
 }
 .graphic-list {
   display: grid;
   height: 100%;
-  grid-template-columns: 24% 25% 25% 26%;
-  grid-template-rows: 29% 19% 14% 38%;
+  gap: 3px;
+  grid-template-columns: 24% 25% 25% auto;
+  grid-template-rows: 29% 19% 14% 36%;
 }
 .graphic-list li {
   height: 100%;
-  padding: 3px;
-  position: relative;
   width: 100%;
+
+  position: relative;
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .graphic-list li:hover .graphic-text {
@@ -273,6 +275,7 @@
   display: block;
   width: 100%;
   height: 100%;
+
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
@@ -313,6 +316,7 @@
   height: 100%;
   object-fit: cover;
   /* background: #000; */
+  overflow: hidden;
   border: 2px solid #000;
 }
 .graphic-list li:nth-child(1) {
@@ -469,24 +473,26 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 15rem;
+  /*   padding: 0 12vw 0 8vw; */
 }
 .about-title {
   text-align: center;
 }
 .profile-title {
   visibility: hidden;
+  width: 60%;
 }
 .about-title h2 {
-  font-size: 4rem;
+  font-size: 3.2vw;
 }
 .about-title p {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 300;
   margin-top: 1.5rem;
 }
 .about-text {
   font-family: 'Pretendard';
+  width: 40%;
 }
 .profile-text {
   visibility: hidden;
@@ -552,22 +558,25 @@
 }
 .more-about-title {
   visibility: hidden;
+  width: 60%;
 }
 .more-about-text {
   visibility: hidden;
+  width: 40%;
 }
 .more-about-text-list > li {
   width: 60rem;
 }
 .more-about-text-list > li + li {
-  margin-top: 8rem;
+  margin-top: 6rem;
 }
 .more-about-text-list > li h3 {
-  font-size: 2.4rem;
+  font-size: 2vw;
   font-weight: 700;
 }
 .more-about-text-list > li p {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  font-weight: 400;
 }
 
 /* epilogue */
@@ -589,9 +598,11 @@
 }
 .epilogue-title {
   visibility: hidden;
+  width: 60%;
 }
 .epilogue-text {
   visibility: hidden;
+  width: 40%;
 }
 .epilogue-text-list > li {
   width: 60rem;
@@ -600,16 +611,17 @@
   margin-top: 8rem;
 }
 .epilogue-text-list > li h3 {
-  font-size: 2.4rem;
+  font-size: 2vw;
   font-weight: 700;
 }
 .epilogue-text-list > li p {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  font-weight: 400;
 }
 
 /* hidden */
 .hidden-page figure {
-  width: 90rem;
+  width: 50%;
   height: 100%;
 }
 .hidden-page {

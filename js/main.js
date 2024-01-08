@@ -9,9 +9,9 @@ window.addEventListener('load', () => {
     },
   });
   tl.to('.visual-text', { color: '#fff' }, '<');
-  tl.to('.sub-img1', { autoAlpha: 1, y: 30 }, '-=.1');
-  tl.to('.sub-img2', { autoAlpha: 1, x: -20 }, '<');
-  tl.to('.sub-img3', {
+  tl.to('.sub-img1', { autoAlpha: 1, x: 20 }, '-=.1');
+  // tl.to('.sub-img2', { autoAlpha: 1, x: -20 }, '<');
+  tl.to('.sub-img2', {
     autoAlpha: 1,
     onComplete: () => {
       moving();
@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
   });
 
   /* splitting */
-  const chars = '😀?ΣΠ#!¯→↓↑←0279BFHJQSVXTZ';
+  const chars = '@^?ΣΠ#!¯→↓↑←0279BFHJQSVXTZ';
   var Glitch = function (selector, index, numberOfGlitchedLetter, timeGlitch, timePerLetter, timeBetweenGlitch) {
     this.selector = selector;
     this.index = index;
@@ -132,8 +132,8 @@ window.addEventListener('load', () => {
   }
 
   $(document).on('mousemove', function (e) {
-    x = e.pageX;
-    y = e.pageY;
+    x = e.pageX / 4;
+    y = e.pageY / 4;
 
     // 6, 코드일 때
     // x = Math.max(-100, Math.min(200, e.pageX - $window.innerWidth() / 2));
@@ -143,6 +143,6 @@ window.addEventListener('load', () => {
     const largo = $(window).height() / 2;
 
     mx = (ancho + x) * (1 / 90);
-    my = (largo + y) * (1 / 80);
+    my = (largo + y) * (1 / 90);
   });
 });
