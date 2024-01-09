@@ -193,12 +193,12 @@ a:hover {
   text-indent: -999px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 #footer .info li:nth-child(1) {
   width: 3.9rem;
   height: 2rem;
   background: url(../img/footer-pic01.svg) no-repeat 0 0 / cover;
-  cursor: pointer;
 }
 #footer .info li:nth-child(3) {
   width: 3rem;
