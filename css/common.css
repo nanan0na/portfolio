@@ -84,7 +84,7 @@ a:hover {
 #container {
   mix-blend-mode: difference;
   /*   background: #5f5; */
-  height: calc(100% - 9rem);
+  height: calc(100% - 9.4rem);
 }
 
 .wrap {
@@ -175,7 +175,7 @@ a:hover {
 
 /* footer */
 #footer {
-  height: 4rem;
+  height: 5rem;
   border-top: 3px solid #000;
 }
 #footer .info {
@@ -184,6 +184,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   font-size: 1.6rem;
+  padding-bottom: 1rem;
 }
 #footer .info li a {
   display: block;
@@ -193,12 +194,12 @@ a:hover {
   text-indent: -999px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 #footer .info li:nth-child(1) {
   width: 3.9rem;
   height: 2rem;
   background: url(../img/footer-pic01.svg) no-repeat 0 0 / cover;
-  cursor: pointer;
 }
 #footer .info li:nth-child(3) {
   width: 3rem;
