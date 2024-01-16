@@ -9,15 +9,16 @@
   font-family: 'Pretendard';
   font-size: 2rem;
   line-height: 1.2;
-  height: 7rem;
+  height: 5rem;
   padding: 1rem 0;
+  /*  */
 }
 #container p b {
   display: block;
 }
 .visual {
   position: relative;
-  height: calc(100% - 7rem);
+  height: calc(100% - 5rem);
 }
 .visual-img {
   position: absolute;
