@@ -140,6 +140,7 @@
   /* font-size: 1.8rem; */
   font-size: 1vw;
   letter-spacing: -2%;
+  margin-top: 0.6rem;
 }
 .web-exp .web-view-text .web-view-text-list li > .tool-list {
   display: flex;
