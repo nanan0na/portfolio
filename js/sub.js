@@ -56,7 +56,7 @@ $(function () {
       $galleryContent.html($image);
       $image.css({
         'object-fit': 'cover',
-        height: '70%',
+        height: '90%',
         'max-width': '100%',
       });
 
