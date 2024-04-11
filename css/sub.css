@@ -264,7 +264,8 @@
   cursor: pointer;
   overflow: hidden;
 }
-.graphic-list li:nth-child(6) img {
+.graphic-list li:nth-child(6) img,
+.graphic-list li:nth-child(1) img {
   object-position: top center;
 }
 .graphic-list li:hover .graphic-text {
