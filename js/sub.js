@@ -12,11 +12,9 @@ $(function () {
     slideToClickedSlide: true,
     on: {
       slideChange: function () {
-        const idx = this.realIndex;
-        const workCategory = $(this.slides[idx]).data('category');
-        // console.log(this.slides[idx]);
-
-        // h2에 접근해서 idx의 data-category를 텍스트로 넣기
+        const idx = this.activeIndex;
+        const slides = this.slides;
+        let workCategory = $(slides[idx]).data('category');
         $('.con-title > h2').text(workCategory);
       },
     },
